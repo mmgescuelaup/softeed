@@ -10,7 +10,14 @@ class coreUrl
 
     /*Url Builder*/
     public function url($controlador=DEFAULT_CONTROLLER,$accion=DEFAULT_ACTION){
-        $urlString="index.php?aplication/controller=".$controlador."&action=".$accion;
+        $urlString='';
+        if ($accion=='index'){
+            $urlString=$controlador.'/';
+        }
+        else{
+            $urlString=$controlador.'/'.$accion;
+        }
+        //$urlString="index.php?controller=".$controlador."&action=".$accion;
         return $urlString;
     }
 }

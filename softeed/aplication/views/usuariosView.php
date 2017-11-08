@@ -16,7 +16,7 @@
         <?php echo $user->correo; ?> -
         <?php echo $user->telefono; ?>
             <div class="col-lg-offset-7">
-                <a href="<?php echo $helper->url("usuarios","borrar"); ?>&id=<?php echo $user->idUsuario; ?>" class="btn btn-danger">Borrar</a>
+                <a href="<?php echo $helper->url("usuarios","borrar"); ?><?php echo '/'.$user->idUsuario; ?>" class="btn btn-danger">Borrar</a>
             </div>
         </hr>
     <?php } ?>

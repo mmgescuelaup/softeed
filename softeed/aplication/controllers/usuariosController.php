@@ -42,6 +42,6 @@ class usuariosController extends coreController
 
             $this->model->deleteBy('idUsuario',$id);
         }
-        $this->redirect();
+        $this->redirect('usuarios');
     }
 }
