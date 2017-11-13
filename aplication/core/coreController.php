@@ -42,10 +42,7 @@ class coreController
     }
 
     /*Crea la accion y la url*/
-    public function redirect($controlador = DEFAULT_CONTROLLER, $accion = DEFAULT_ACTION)
-    {
-        //header("Location:index.php?controllers=".$controlador."&action=".$accion);
-        $url=$this->helper->url($controlador,$accion);
-        header("Location:".$url);
+    public function redirect($controlador=DEFAULT_CONTROLLER,$accion=DEFAULT_ACTION){
+        header("Location:index.php?aplication/controllers=".$controlador."&action=".$accion);
     }
 }

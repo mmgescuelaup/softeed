@@ -1,0 +1,401 @@
+/* --- Generic Classes --- */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F0F4F8;
+}
+
+a {
+    text-decoration: none;
+}
+
+.full {
+    width: 100%;
+}
+
+.half {
+    width: 50%;
+}
+
+.quarter {
+    width: 20%;
+}
+
+.container {
+    width: 90%;
+    height: inherit;
+}
+
+.black {
+    color: black;
+}
+
+.darkpurple {
+    color: #62669C;
+}
+
+/* --- End Generic Classes --- */
+
+/* --- Header --- */
+
+header {
+    height: auto;
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;    
+}
+
+header .container .left {
+    width: 70%;
+    height: inherit;
+    display: flex;
+    flex-direction: row;    
+}
+
+header .container .left .logo {
+    width: 25%;    
+    display: flex;
+    align-items: center;    
+}
+
+header .container .left .logo img {
+    height: 60px;     
+}
+
+header .container .left nav {
+    width: 70%;    
+}
+
+header .container .left nav .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;    
+}
+
+header .container .left nav .navigation .nav {
+    width: auto;
+    height: 67px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    padding: 0px 15px 0px 15px;
+    transition: border-top 0.5s;
+    border-top: 3px solid transparent;
+}
+
+header .container .left nav .navigation .nav:hover {
+    border-top: 3px solid #5246F2;    
+}
+
+.selected {
+    color: #5246F2;
+}
+
+header .container .left nav .navigation .nav a {
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+header .container .right {
+    width: 30%;
+    height: 70px;    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+header .container .right .signin, header .container .right .signup {    
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .container .right .signin a, header .container .right .signup a{
+    padding: 10px 22px 10px 22px;
+    border: 1px solid lightgray;
+    border-radius: 50px;
+    transition: color, background-color 0.5s;
+    font-weight: 300;
+}
+
+header .container .right .signin a:hover {
+    background-color: #5246F2;
+    color: white;
+}
+
+header .container .right .signup a {
+    background-color: #5246F2;
+    color: #ffffff;    
+}
+
+header .container .right .signup a:hover {
+    background-color: transparent;
+    color: #000000;
+}
+
+@media screen and (min-width : 768px) and (max-width : 1025px) {
+    
+    .container {
+        width: 95%;
+    }
+        
+    body {
+        background: red;
+    }  
+    header .container .left {
+        width: 65%;
+    }
+    header .container .left .logo img {
+        height: 45px;
+    }
+    header .container .left nav {
+        padding: 0px 10px 0px 10px;
+    }
+    header .container .left nav .navigation .nav a {
+        font-size: 0.9em;
+    }
+    header .container .left nav .navigation .nav {    
+        height: 64px;            
+        padding: 0px 10px 0px 10px;
+    }
+    header .container .left nav .navigation .nav:hover {
+        border-top: 2px solid #5246F2;    
+    }
+    header .container .right {
+        width: 35%;
+    }
+    header .container .right .signin a, header .container .right .signup a{
+        padding: 5px 10px 5px 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .container {
+        width: 95%;
+    }        
+    body {
+        background: green;
+    }
+    header {
+        height: auto;
+    }
+    header .container {
+        flex-direction: column;
+    }
+    header .container .left {
+        width: 100%;
+    }
+    header .container .right {
+        display: none;
+    }
+    header .container .left .logo img {
+        height: 45px;
+    }
+    header .container .left nav {
+        width: 100%;        
+        padding: 0px 20px 0px 20px;        
+    }
+    header .container .left nav .navigation {    
+        justify-content: space-around;
+    }
+    header .container .left nav .navigation .nav a {
+        font-size: 0.9em;    
+    }
+    header .container .left nav .navigation .nav {    
+        height: 64px;            
+        padding: 0px 10px 0px 10px;
+    }
+    header .container .left nav .navigation .nav:hover {
+        border-top: 2px solid #5246F2;    
+    }    
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+    }        
+    body {
+        background: green;
+    }
+    header {
+        height: auto;
+    }    
+    header .container .left {
+        width: 100%;
+    }
+    header .container .right {
+        display: none;
+    }
+    header .container .left .logo img {
+        height: 45px;
+    }
+    header .container .left nav {
+        display: none;        
+    } 
+}
+
+
+/* --- End Header --- */
+
+
+.banner-profile {
+    height: 300px;
+    background-color: #1D2338;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.banner-profile .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+}
+
+.banner-profile .container .profile-picture {
+    width: 20%;
+    height: inherit;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;        
+}
+
+.banner-profile .container .profile-picture img {
+    height: 60%;
+    border-radius: 50%;
+}
+
+.banner-profile .container .information {
+    width: 80%;
+    height: inherit;    
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.banner-profile .container .information .name h2{
+    font-weight: 600;
+    padding: 5px 0px 5px 0px;
+}
+
+.banner-profile .container .information .school h3{
+    font-weight: 500;
+    padding: 5px 0px 5px 0px;
+}
+
+.banner-profile .container .information .location{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    padding: 5px 0px 5px 0px;
+}
+
+.banner-profile .container .information .location h4{
+    font-weight: 500 bold;
+}
+
+.banner-profile .container .information .location i{
+    margin-left: 10px;
+}
+
+.banner-profile .container .information .about p{
+    width: 90%;    
+    text-align: justify;
+    font-weight: 300;
+    padding: 5px 0px 5px 0px;
+}
+
+
+.banner-profile .container .information .social i {
+    color: #719CFC;
+    font-size: 1.2em;
+    padding: 5px 5px 5px 5px;
+}
+
+.projects {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    font-family: 'Open Sans', sans-serif;        
+}
+
+.projects .container {
+    background-color: #ffffff;
+    height: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.projects .container .title {
+    width: 100%;    
+}
+
+.projects .container .title h2 {    
+    padding: 20px 2px 20px 20px;
+    font-size: 1.5em;
+}
+
+.projects .container .grid {
+    width: 100%;
+    height: auto;
+    margin: 5px 0px 25px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.projects .container .grid .card {
+    position: relative;
+}
+
+.projects .container .grid .card .card-cover {    
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #5246F2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects .container .grid .card .card-cover a {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.projects .container .grid .card:hover .card-cover {
+	opacity: 1;
+}
+
+.projects .container .grid .card img {
+    width: 100%;  
+    display: flex;        
+}

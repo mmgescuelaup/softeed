@@ -14,8 +14,9 @@
     
     <link rel="stylesheet" href="aplication/css/style.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="aplication/css/font-awesome.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     
     
@@ -24,7 +25,11 @@
     
     <?PHP
         require 'aplication/views/header/header.php';
-    ?>    
+        require 'aplication/views/public/profile.php';
+    ?>
+    
+    
+    
     
     <script src="aplication/js/jquery-3.2.1.min.js"></script>
     <script src="aplication/js/main.js"></script>    
