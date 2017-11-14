@@ -1,5 +1,5 @@
-RewriteEngine On
-RewriteBase /softeed/softeed/
-#RewriteRule ^inicio$ aplication/index.php
-RewriteRule ^(.*)/(.*)/(.*)$ aplication/index.php?=controllers=$1&action=$2&id=$3
-RewriteRule ^(.*)/$ aplication/index.php=controllers=$1&action=index
+##RewriteEngine On
+##RewriteBase /softeed/softeed/
+###RewriteRule ^inicio$ aplication/index.php
+##RewriteRule ^(.*)/(.*)/(.*)$ aplication/index.php?##=controllers=$1&action=$2&id=$3
+##RewriteRule ^(.*)/$ aplication/index.php=controllers=$1&action=index

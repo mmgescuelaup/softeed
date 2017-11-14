@@ -66,4 +66,12 @@
     </div>
 </div>
 
+<div class="summary full">
+    <div class="container">
+        <div class="title darkpurple">
+            <h2>ABOUT</h2>
+        </div>
+    </div>
+</div>
+
 
