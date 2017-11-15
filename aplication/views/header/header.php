@@ -1,4 +1,4 @@
-<header class="full">        
+<header class="full">
     <div class="container">
         <div class="left">
             <div class="logo">
@@ -7,10 +7,10 @@
             <nav>
                 <div class="navigation full">
                     <div class="nav">
-                        <a href="#" class="black">ESTUDIANTES</a>
+                        <a href="<?php echo $helper->url("profile","index"); ?>" class="black">ESTUDIANTES</a>
                     </div>
                     <div class="nav">
-                        <a href="#" class="black">PROYECTOS</a>
+                        <a href="<?php echo $helper->url("projects","index"); ?>" class="black">PROYECTOS</a>
                     </div>
                     <div class="nav">
                         <a href="#" class="black">RECLUTAR</a>

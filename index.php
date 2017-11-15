@@ -1,3 +1,14 @@
+<?php
+//Configuración global
+require_once 'aplication/config/mainConfig.php';
+
+//Base para los controladores
+require_once 'aplication/core/coreController.php';
+
+//Funciones para el controlador frontal
+require_once 'aplication/core/coreMain.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,7 +34,13 @@
 <body>
     
     <?PHP
-        require 'aplication/views/header/header.php';
+        if(isset($_GET["aplication/controller"])){
+            $controllerObj=loadController($_GET["aplication/controller"]);
+            launch($controllerObj);
+        }else{
+            $controllerObj=loadController(DEFAULT_CONTROLLER);
+            launch($controllerObj);
+        }
     ?>    
     
     <script src="aplication/js/jquery-3.2.1.min.js"></script>
