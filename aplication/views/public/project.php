@@ -21,15 +21,15 @@
         </div>
         <div class="right">
             <div class="developer">
-                <div class="image">                    
+                <div class="image">
                     <img src="aplication/images/sample-profile.jpg" alt="">
                 </div>
                 <div class="title">
                     <h3><a href="#">Thomas Cruise Maphoner</a></h3>
                     <h4>@ThomCruze</h4>
-                </div>                  
+                </div>
             </div>
-            <div class="sales full">                
+            <div class="sales full">
                 <div class="price">
                     <h2>$50 MXN</h2>
                 </div>
@@ -43,7 +43,7 @@
                     <img src="aplication/images/americanexpress.png" alt="">
                 </div>
             </div>
-            <div class="tags full">                
+            <div class="tags full">
                 <div class="tag">
                     <a href="#">Android</a>
                 </div>

@@ -7,3 +7,7 @@
 ehthumbs.db
 Thumbs.db
 /localtest/
+.idea/modules.xml
+.idea/softeed.iml
+.idea/vcs.xml
+.idea/workspace.xml
