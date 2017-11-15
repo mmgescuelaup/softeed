@@ -13,11 +13,11 @@
 */
 function loadController($controller)
 {
-    $controlador = ucwords($controller) . 'Controller';
+    $controlador = ucwords($controller);
     $strFileController = 'aplication/controllers/' . $controlador . '.php';
 
     if (!is_file($strFileController)) {
-        $strFileController = 'aplication/controllers/' . ucwords(DEFAULT_CONTROLLER) . 'Controller.php';
+        $strFileController = 'aplication/controllers/' . ucwords(DEFAULT_CONTROLLER) . '.php';
     }
 
     require_once $strFileController;
