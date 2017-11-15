@@ -69,7 +69,27 @@
 <div class="summary full">
     <div class="container">
         <div class="title darkpurple">
-            <h2>ABOUT</h2>
+            <h2>ABOUT</h2>            
+        </div>
+        <div class="content full">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, ipsum quos voluptates ea dolorum expedita id a debitis earum, aspernatur omnis culpa natus sit corporis doloribus aliquam quidem quam at.</p>
+            <p>Cancún - México</p>
+            <p>Age: 19</p>
+            <p>Sex: Yes</p>
+        </div>
+        <div class="title darkpurple">
+            <h2>EDUCATION</h2>            
+        </div>
+        <div class="content full">
+            <p>University</p>
+            <p>Polytechnic University of Quintana Roo</p>
+            <p>Software Engineering</p>
+        </div>
+        <div class="title darkpurple">
+            <h2>SKILLS</h2>            
+        </div>
+        <div class="content full">
+            
         </div>
         <div class="content full">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, ipsum quos voluptates ea dolorum expedita id a debitis earum, aspernatur omnis culpa natus sit corporis doloribus aliquam quidem quam at.</p>
