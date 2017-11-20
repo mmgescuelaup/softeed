@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
         #registro-form{
-            padding: 50px 0px 50px 0px;
+            padding: 50px 50px 50px 50px;
             background-color: #E9EFF0;
             width: 50%;
             display: flex;
@@ -84,6 +84,13 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            padding: 13px 0px;
+            margin-left: 11px;
+        }
+        #btn-registro:hover,
+        #btn-registro:focus{
+            color:#000;
+            background-color: #fff;
         }
 
         #iaccept{
@@ -99,16 +106,16 @@
     <div class="container" id="registro-form">
     <h1>Registrate gratis</h1>
     <form action="" method="post" enctype ="multipart/form-data">
-        <input type="text" name="nombre" id="" placeholder="Tu Nombre" class="input-form">
-        <input type="text" name="apellido" id="" placeholder="Tu Apellido" class="input-form">
-        <input type="text" name="correo" id="" placeholder="Tu Correo Electronico" class="input-form">
-        <input type="text" name="sexo" id="" placeholder="Tu Sexo" class="input-form">
-        <input type="text" name="edad" id="" placeholder="Tu Edad" class="input-form">
-        <input type="text" name="escolaridad" id="" placeholder="Tu Escolaridad" class="input-form">
-        <input type="text" name="centro-estudios" id="" placeholder="Tu Centro de Estudios" class="input-form">
+        <input type="text" name="nombre" id="" placeholder="Ingresa tu Nombre" class="input-form">
+        <input type="text" name="apellido" id="" placeholder="Ingresa tu Apellido" class="input-form">
+        <input type="text" name="correo" id="" placeholder="Ingresa tu Correo Electronico" class="input-form">
+        <input type="text" name="sexo" id="" placeholder="Ingresa tu Sexo" class="input-form">
+        <input type="text" name="edad" id="" placeholder="Ingresa tu Edad" class="input-form">
+        <input type="text" name="escolaridad" id="" placeholder="Ingresa tu Escolaridad" class="input-form">
+        <input type="text" name="centro-estudios" id="" placeholder="Ingresa tu Centro de Estudios" class="input-form">
         <input type="file" name="file" id="file">
-        <label for="file" class="input-form">Tu Constancia de estudios</label>
-        <input type="submit" name="boton" id="btn-registro" placeholder="Registrarse" class="input-form darkpurple"></button>                                
+        <label for="file" class="input-form">    Ingresa tu Constancia de estudios</label>
+        <input type="submit" name="boton" id="btn-registro" value="Registrarse" class="input-form darkpurple">
         <p id="iaccept">Al registrarte estás aceptando nuestros <a href="#">Términos y Condiciones</a></p>
     </form>
     </div>
