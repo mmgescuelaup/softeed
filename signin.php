@@ -119,8 +119,8 @@
     <div class="container" id="sigin-form">
     <h1>Iniciar Sesión</h1>
     <form action="" method="post" enctype ="multipart/form-data">
-        <input type="email" name="nombre" id="" placeholder="Correo Electronico" class="input-form">
-        <input type="password" name="apellido" id="" placeholder="Contraseña" class="input-form">
+        <input type="email" name="mail" id="" placeholder="Correo Electronico" class="input-form">
+        <input type="password" name="pass" id="" placeholder="Contraseña" class="input-form">
 
         <a href="#" class="iaccept">Olvidaste tu contraseña?</a>
 
