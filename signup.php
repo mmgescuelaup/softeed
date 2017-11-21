@@ -5,7 +5,7 @@
    <!-- Meta -->
 
     <meta charset="UTF-8">
-    <title>Softeed - Perfiles</title>
+    <title>Softeed - Registro</title>
     <meta name="author" content="Social Nodes">
     <meta name="description" content="Softeed es la solución ideal para estudiantes y reclutadores permite al estudiante crear portafolios en el cual puede exponer sus proyectos, crear un perfil y darse a conocer, en cuanto al reclutador permite descubrir proyectos, portafolios, contactar y seleccionar futuros candidatos.">
     <meta name="keywords" content="Estudiantes, Proyectos, Freelance, Trabajos, Universidades">
