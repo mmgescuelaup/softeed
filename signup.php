@@ -23,7 +23,6 @@
             background-color: #F0F4F8;
             background: #252525 url(aplication/images/nodeatles.png) no-repeat fixed center;
             width: 100%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
