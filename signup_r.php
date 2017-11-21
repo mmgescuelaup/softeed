@@ -5,7 +5,7 @@
    <!-- Meta -->
 
     <meta charset="UTF-8">
-    <title>Softeed - Iniciar Sesión</title>
+    <title>Softeed - Registro Reclutador</title>
     <meta name="author" content="Social Nodes">
     <meta name="description" content="Softeed es la solución ideal para estudiantes y reclutadores permite al estudiante crear portafolios en el cual puede exponer sus proyectos, crear un perfil y darse a conocer, en cuanto al reclutador permite descubrir proyectos, portafolios, contactar y seleccionar futuros candidatos.">
     <meta name="keywords" content="Estudiantes, Proyectos, Freelance, Trabajos, Universidades">
@@ -19,26 +19,44 @@
     <link rel="stylesheet" href="aplication/css/font-awesome.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
-        #sigin-form{
+        .c2{
+            display: flex;
+            flex-direction: row;
+        }
+        #lateral-pic{
             padding: 50px 50px 50px 50px;
             background-color: #F0F4F8;
-            width: 100%;
+            width: 60%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            align-content: center;
         }
-        #sigin-form h1{
+        #img{
+            background-color: #e0e4e8;
+            margin-top: 10%;
+            height: 90%;
+            width: 100%;
+        }
+        #registro-form{
+            padding: 50px 50px 50px 50px;
+            background-color: #F0F4F8;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+
+        }
+        #registro-form h1{
             display: flex;
             font-weight: 300;
             margin-bottom: 30px;
         }
-        #sigin-form form{
-            justify-content: space-around;
+        #registro-form form{
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding-right: 22px;
-            width: 30%;
+            width: 85%;
         }
         .input-form{
             display: flex;
@@ -116,19 +134,27 @@
 
 </head>
 <body>
-    <div class="container" id="sigin-form">
-    <h1>Iniciar Sesión</h1>
+    <div class="c2">
+    <div class="container" id="lateral-pic">
+        <div id="img"><p>Aqui va una imagen </p></div>
+        <p class="iaccept">Ya estas registrado? <a href="#">Inicia Sesión</a></p>
+    </div>
+    <div class="container" id="registro-form">
+    <h1>Registrate gratis</h1>
     <form action="" method="post" enctype ="multipart/form-data">
-        <input type="email" name="mail" id="" placeholder="Correo Electronico" class="input-form">
-        <input type="password" name="pass" id="" placeholder="Contraseña" class="input-form">
-
-        <a href="#" class="iaccept">Olvidaste tu contraseña?</a>
-
-        <input type="submit" name="boton" id="btn-form" value="Iniciar Sesión" class="input-form darkpurple">
-        <p class="iaccept">No tienes una cuenta? <a href="#">Registrate!</a></p>
+        <input type="text" name="nombre" id="" placeholder="Ingresa tu Nombre" class="input-form">
+        <input type="text" name="apellido" id="" placeholder="Ingresa tu Apellido" class="input-form">
+        <input type="number" name="edad" id="" placeholder="Ingresa tu Edad" class="input-form">
+        <input type="text" name="empresa" id="" placeholder="Ingresa el Nombre de tu empresa" class="input-form">
+        <input type="text" name="rfc" id="" placeholder="Ingresa tu RFC" class="input-form">
+        <input type="text" name="direccion" id="" placeholder="Ingresa la Direccion de la Empresa" class="input-form">
+        <input type="text" name="tel" id="" placeholder="Ingresa tu Telefono" class="input-form">
+        <input type="email" name="correo" id="" placeholder="Ingresa tu Correo Electronico" class="input-form">
+        <input type="submit" name="boton" id="btn-form" value="Registrarse" class="input-form darkpurple">
+        <p class="iaccept">Al registrarte estás aceptando nuestros <a href="#">Términos y Condiciones</a></p>
     </form>
     </div>
-
+    </div>
     <script src="aplication/js/jquery-3.2.1.min.js"></script>
     <script src="aplication/js/main.js"></script>
 </body>
