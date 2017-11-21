@@ -19,44 +19,87 @@
     <link rel="stylesheet" href="aplication/css/font-awesome.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
-        .c2{
-            display: flex;
-            flex-direction: row;
-        }
-        #lateral-pic{
-            padding: 50px 50px 50px 50px;
+        #choose{
             background-color: #F0F4F8;
-            width: 60%;
+            background: #252525 url(aplication/images/nodeatles.png) no-repeat fixed center;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            align-content: center;
+            justify-content: center;
+            bottom: 0px;
+            top: 0px;
+            position: absolute;
         }
-        #img{
-            background-color: #e0e4e8;
-            margin-top: 10%;
-            height: 90%;
-            width: 100%;
-        }
-        #registro-form{
-            padding: 50px 50px 50px 50px;
-            background-color: #F0F4F8;
-            width: 40%;
+        #cuadro{
+            padding: 30px;
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 10;
+        }
+        #gradiente{
+            position: absolute;
+            background-color: #F0F4F8;
+            padding: 30px;
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.9;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#af8fe2+15,6a6ce0+40,6a6ce0+40,6a6ce0+58,61c0e2+90,61c0e2+100 */
+            background: #af8fe2; /* Old browsers */
+            background: -moz-linear-gradient(45deg, #af8fe2 15%, #6a6ce0 40%, #6a6ce0 40%, #6a6ce0 58%, #61c0e2 90%, #61c0e2 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(45deg, #af8fe2 15%,#6a6ce0 40%,#6a6ce0 40%,#6a6ce0 58%,#61c0e2 90%,#61c0e2 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(45deg, #af8fe2 15%,#6a6ce0 40%,#6a6ce0 40%,#6a6ce0 58%,#61c0e2 90%,#61c0e2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af8fe2', endColorstr='#61c0e2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
         }
-        #registro-form h1{
+        #choose h1, #choose h2, #choose h3{
             display: flex;
-            font-weight: 300;
+            color: #fff;
+        }
+        #choose h1{
+            font-weight: 400;
             margin-bottom: 30px;
         }
-        #registro-form form{
+        #choose h2{
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        #choose h3{
+            font-weight: 200;
+            margin-bottom: 30px;
+        }
+        .button{
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-right: 22px;
-            width: 85%;
+            color: #F0F4F8;
+            background-color: #252525;
+            border: none;
+            transition: color, background-color 0.5s;
+            font-weight: 300;
+            font-size: 1em;
+            border-radius: 50px;
+            height: 3em;
+            padding: 0px 50px;
+        }
+        .button:focus,
+        .button:hover{
+            background-color: #fff;
+            color:#000;
+            outline: none;
+            box-shadow: 5px 5px 20px 1px #2d2d2d;
+            border-color: #5246F2;
         }
         .input-form{
             display: flex;
@@ -67,7 +110,7 @@
             transition: color, background-color 0.5s;
             font-weight: 300;
             font-size: 1em;
-            color: #5246F2;
+            color: #252525;
             background-color: #F0F4F8;
             width: 100%;
         }
@@ -78,91 +121,24 @@
             box-shadow: 5px 5px 20px 1px lightgray;
             border-color: #5246F2;
         }
-        #file{
-            width: 0.1px;
-            height: 0.1px;
-            opacity: 0;
-            overflow: hidden;
-            position: absolute;
-            z-index: -1;
-        }
-        #file + label {
-            font-size: 1em;
-        }
-
-        #file:focus + label,
-        #file + label:hover {
-            background-color: #5246F2;
-            color: #ffffff;
-            cursor: pointer;
-        }
-        #btn-form {
-            transition: color, background-color 0.5s;
-            background-color: #5246F2;
-            color: #ffffff;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 13px 0px;
-            margin-left: 11px;
-        }
-        #btn-form:hover,
-        #btn-form:focus{
-            color:#000;
-            background-color: #fff;
-        }
-
-        .iaccept{
-            margin-top: 10px;
-            text-align: center;
-        }
-        #select{
-            overflow: hidden;
-            padding: 0px;
-            padding-right: 22px;
-        }
-        #select select{
-            outline: none;
-            background: transparent;
-            border: none;
-            font-size: 1em;
-            height: 3em;
-            width: 100%;
-            margin-left: 11px;
-        }
     </style>
 
 </head>
 <body>
-    <div class="c2">
-    <div class="container" id="lateral-pic">
-        <div id="img"><p>Aqui va una imagen </p></div>
-        <p class="iaccept">Ya estas registrado? <a href="#">Inicia Sesión</a></p>
-    </div>
-    <div class="container" id="registro-form">
-    <h1>Registrate gratis</h1>
-    <form action="" method="post" enctype ="multipart/form-data">
-        <input type="text" name="nombre" id="" placeholder="Ingresa tu Nombre" class="input-form">
-        <input type="text" name="apellido" id="" placeholder="Ingresa tu Apellido" class="input-form">
-        <input type="email" name="correo" id="" placeholder="Ingresa tu Correo Electronico" class="input-form">
-        <input type="text" name="sexo" id="" placeholder="Ingresa tu Sexo" class="input-form">
-        <input type="number" name="edad" id="" placeholder="Ingresa tu Edad" class="input-form">
-<!--        <input type="text" name="escolaridad" id="" placeholder="Ingresa tu Escolaridad" class="input-form">-->
-        <div id="select" class="input-form">
-        <select name="escolaridad" class="">
-            <option value="medio">Medio-Superior</option>
-            <option value="super">Superior</option>
-            <option value="maest">Maestria</option>
-        </select>
-        </div>
-        <input type="text" name="centro-estudios" id="" placeholder="Ingresa tu Centro de Estudios" class="input-form">
-        <input type="file" name="file" id="file">
-        <label for="file" class="input-form">    Ingresa tu Constancia de estudios</label>
-        <input type="submit" name="boton" id="btn-form" value="Registrarse" class="input-form darkpurple">
-        <p class="iaccept">Al registrarte estás aceptando nuestros <a href="#">Términos y Condiciones</a></p>
-    </form>
+    <div class="container" id="choose">
+    <div id="gradiente"></div>
+    <div id="cuadro">
+    <h1>Registrate gratis!</h1>
+    <h2>Unete a la comunidad de portafolios para estudiantes mas grande de México</h2>
+    <h3>Me quiero registrar como:</h3>
+    <div>
+        <a href="/#"><button class="button">Reclutador</button></a>
+        <br>
+        <a href="/#"><button class="button">Estudiante</button></a>
     </div>
     </div>
+    </div>
+
     <script src="aplication/js/jquery-3.2.1.min.js"></script>
     <script src="aplication/js/main.js"></script>
 </body>
