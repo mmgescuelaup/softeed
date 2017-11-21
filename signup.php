@@ -29,7 +29,7 @@
             align-items: center;
             justify-content: center;
             bottom: 0px;
-            top: 0px;
+            top: 70px;
             position: absolute;
         }
         #cuadro{
