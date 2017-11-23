@@ -7,23 +7,20 @@
             <nav>
                 <div class="navigation full">
                     <div class="nav">
-                        <a href="<?php echo $helper->url("profile","index"); ?>" class="black">ESTUDIANTES</a>
+                        <a href="<?php echo $helper->url("estudiantes","index"); ?>" class="black">ESTUDIANTES</a>
                     </div>
                     <div class="nav">
                         <a href="<?php echo $helper->url("projects","index"); ?>" class="black">PROYECTOS</a>
-                    </div>
-                    <div class="nav">
-                        <a href="#" class="black">RECLUTAR</a>
                     </div>
                 </div>
             </nav>
         </div>
         <div class="right">
               <div class="signin ">
-                  <a href="#" class="black">Iniciar Sesión</a>
+                  <a href="<?php echo $helper->url("login","index")?>" class="black">Iniciar Sesión</a>
               </div>
               <div class="signup ">
-                  <a href="#" class="black">Registarse</a>
+                  <a href="<?php echo $helper->url("registre","index")?>" class="black">Registarse</a>
               </div>
         </div>
     </div>

@@ -45,4 +45,8 @@ class coreController
     public function redirect($controlador=DEFAULT_CONTROLLER,$accion=DEFAULT_ACTION){
         header("Location:index.php?aplication/controllers=".$controlador."&action=".$accion);
     }
+
+    public function login(){
+
+    }
 }

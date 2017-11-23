@@ -13,6 +13,7 @@ class coreInits
     private $table;
     private $db;
     private $conectar;
+    public $dataUser;
 
     public function __construct($table, $adapter) {
         $this->table=(string) $table;
