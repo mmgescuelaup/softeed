@@ -30,7 +30,7 @@ class usuariosController extends coreController
 
 
         //Cargamos la vista y le pasamos valores
-        $this->loadView("public/profileModel",array(
+        $this->loadView("usuariosView",array(
             "allusers"=>$allusers,
             "dataLog"=>$data
         ));

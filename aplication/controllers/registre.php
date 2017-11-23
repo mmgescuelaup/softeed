@@ -26,6 +26,10 @@ class registre extends coreController
         $this->loadView('public/signup_r',array());
     }
 
+    public function createReclutador(){
+        
+    }
+
     public function estudiante(){
         $this->loadView('public/signup_e',array());
     }

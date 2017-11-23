@@ -12,10 +12,10 @@ class coreModel extends coreInits
     private $table;
     private $fluent;
 
-    public function __construct($table, $adapter) {
-        $this->table=(string) $table;
+    public function __construct($gtable, $adapter) {
+        $this->table=$gtable;
         $this->fluent=$adapter;
-        parent::__construct($table, $this->fluent);
+        parent::__construct($gtable, $this->fluent);
     }
 
     public function fluent(){
@@ -30,18 +30,25 @@ class coreModel extends coreInits
     public function ejecutarSql($query){
         $query=$this->db()->query($query);
         if($query==true){
-            if($query->num_rows>1){
-                while($row = $query->fetch_object()) {
+            if($query->rowCount()>1){
+                $resultSet = $query->fetchAll();
+                /*while($row = $query->fetch()) {
                     $resultSet[]=$row;
-                }
-            }elseif($query->num_rows==1){
-                if($row = $query->fetch_object()) {
+                }*/
+            }
+            elseif($query->rowCount()==1){
+
+                $resultSet = $query->fetch();
+                /*
+                if($row = $query->fetch()) {
                     $resultSet=$row;
-                }
-            }else{
+                }*/
+            }
+            else{
                 $resultSet=true;
             }
-        }else{
+        }
+        else{
             $resultSet=false;
         }
 

@@ -118,14 +118,14 @@
 <body>
     <div class="container" id="sigin-form">
     <h1>Iniciar Sesión</h1>
-    <form action="" method="post" enctype ="multipart/form-data">
+    <form action="<?php echo $helper->url("login","entrar");?>" method="post" enctype ="multipart/form-data">
         <input type="email" name="mail" id="" placeholder="Correo Electronico" class="input-form">
         <input type="password" name="pass" id="" placeholder="Contraseña" class="input-form">
 
         <a href="#" class="iaccept">Olvidaste tu contraseña?</a>
 
         <input type="submit" name="boton" id="btn-form" value="Iniciar Sesión" class="input-form darkpurple">
-        <p class="iaccept">No tienes una cuenta? <a href="#">Registrate!</a></p>
+        <p class="iaccept">No tienes una cuenta? Registrate!</p>
     </form>
     </div>
 
