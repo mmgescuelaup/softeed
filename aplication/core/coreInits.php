@@ -17,7 +17,7 @@ class coreInits
 
     public function __construct($table, $adapter) {
         $this->table=(string) $table;
-        $this->db=$adapter;
+        $this->db=$adapter; 
     }
 
     public function getConetar(){
@@ -25,7 +25,7 @@ class coreInits
     }
 
     public function db(){
-        return $this->conectar;
+        return $this->db;
     }
 
     public function getAll(){

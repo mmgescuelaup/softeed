@@ -9,10 +9,9 @@
  */
 class coreController
 {
-    public $adapter;
+    public $adapter;    
 
-    public function __construct()
-    {
+    public function __construct(){
         require_once 'coreConection.php';
         require_once 'coreInits.php';
         require_once 'coreModel.php';
