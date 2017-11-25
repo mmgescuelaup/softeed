@@ -34,7 +34,7 @@
             flex-direction: column;
         }
 
-        #form-registro {
+        #form-datos {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -124,7 +124,7 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-/*            height: 262px;*/
+            height: 262px;
             background-color: #88a6c6;
             margin-bottom: 125px;
 
@@ -204,7 +204,7 @@
             </label>
            </form>
        </div>
-        <form action="" method="post" enctype="multipart/form-data" id="form-registro">
+        <form action="" method="post" enctype="multipart/form-data" id="form-datos">
             <div class="registro-form">
                 <label for="nombre" class="labelsito">Nombre</label>
                 <input type="text" name="nombre" id="" placeholder="Actualiza tu Nombre" class="input-form">
