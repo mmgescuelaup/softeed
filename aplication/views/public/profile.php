@@ -27,8 +27,8 @@
                 <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
             </div>
-        </div>
-    </div>
+        </div>        
+    </div>    
 </div>
 
 
@@ -46,21 +46,21 @@
             </div>
             <div class="card quarter">
                 <img src="aplication/images/card2.jpg" alt="">
-                <div class="card-cover">
+                <div class="card-cover">                    
                     <a href="#">Project2</a>
-                </div>
+                </div>                
             </div>
             <div class="card quarter">
                 <img src="aplication/images/card3.jpg" alt="">
-                <div class="card-cover">
+                <div class="card-cover">                    
                     <a href="#">Project3</a>
-                </div>
+                </div>                
             </div>
             <div class="card quarter">
                 <img src="aplication/images/card4.png" alt="">
-                <div class="card-cover">
+                <div class="card-cover">                    
                     <a href="#">Project4</a>
-                </div>
+                </div>                
             </div>
         </div>
     </div>
@@ -91,25 +91,7 @@
         <div class="content full">
             
         </div>
-        <div class="content full">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, ipsum quos voluptates ea dolorum expedita id a debitis earum, aspernatur omnis culpa natus sit corporis doloribus aliquam quidem quam at.</p>
-            <p>Cancún - México</p>
-            <p>Age: 19</p>
-            <p>Sex: Yes</p>
-        </div>
-        <div class="title darkpurple">
-            <h2>EDUCATION</h2>
-        </div>
-        <div class="content full">
-            <p>University</p>
-            <p>Polytechnic University of Quintana Roo</p>
-            <p>Software Engineering</p>
-        </div>
-        <div class="title darkpurple">
-            <h2>SKILLS</h2>
-        </div>
-        <div class="content full">
-
-        </div>
     </div>
 </div>
+
+

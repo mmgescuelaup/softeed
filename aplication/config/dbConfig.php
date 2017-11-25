@@ -8,6 +8,6 @@ return array(
     "host"      =>"localhost",
     "user"      =>"root",
     "pass"      =>"",
-    "database"  =>"softeedPr"
+    "database"  =>"softeed"
 );
 ?>

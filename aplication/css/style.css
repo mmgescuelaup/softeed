@@ -40,6 +40,10 @@ a {
     color: #62669C;
 }
 
+.green {
+    background-color: #00AE50;
+}
+
 p {
     font-size: 0.9em;
 }
@@ -591,7 +595,7 @@ header .container .right .signup a:hover {
     padding: 5px;
 }
 
-.viewer-project .container .right .tags {
+.viewer-project .container .right .tags, .students-showcase .container .left .card .tags {
     height: auto;
     display: flex;
     flex-direction: row;
@@ -601,7 +605,7 @@ header .container .right .signup a:hover {
     border-bottom: 1px solid lightgray;
 }
 
-.viewer-project .container .right .tags .tag {
+.viewer-project .container .right .tags .tag, .students-showcase .container .left .card .tags .tag {
     padding: 0px 8px;
     background-color: #eceff5;
     line-height: 25px;
@@ -609,8 +613,412 @@ header .container .right .signup a:hover {
     
 }
 
-.viewer-project .container .right .tags .tag a {
+.viewer-project .container .right .tags .tag a, .students-showcase .container .left .card .tags .tag a {
     font-size: 10px;
     color: #a1a8af;
     text-transform: uppercase;    
+}
+
+/* --- End Projects --- */
+
+
+/* --- ShowCase Projects --- */
+
+.showcase-banner {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    background: linear-gradient(270deg, #5865b8, #3182d3);
+    background-size: 400% 400%;
+    -webkit-animation: Legend 6s ease infinite;
+    -moz-animation: Legend 6s ease infinite;
+    -o-animation: Legend 6s ease infinite;
+    animation: Legend 6s ease infinite;
+}
+
+@-webkit-keyframes Legend {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes Legend {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes Legend {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes Legend { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.showcase-banner .container .legend, .students-banner .container .legend {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+}
+
+.showcase-banner .container .legend h2, .students-banner .container .legend h2 {
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.showcase-search { 
+    display: flex;
+    justify-content: center;
+}
+
+.showcase-search form {   
+    width: 50%;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px 0px 30px 0px;    
+}
+
+
+.showcase-search form input[type="text"] {
+    width: 80%;
+    padding: 10px 22px 10px 22px;
+    border: 0px solid lightgray;
+    border-radius: 50px;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: gray;
+    outline: none;    
+}
+
+.showcase-search form input[type="submit"] {
+    width: 20%;
+    padding: 10px 22px 10px 22px;
+    border: 0px solid lightgray;
+    border-radius: 50px;
+    transition: color, background-color 0.5s;
+    font-weight: 300;    
+    background-color: #5246F2;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;    
+}
+
+.showcase-search form input[type="submit"]:hover {
+    background-color: white;
+    color: #5246F2;    
+}
+
+
+.showcase-categories {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding-bottom: 50px;
+}
+
+.showcase-categories .categories {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;     
+}
+
+.showcase-categories .categories .category {
+    width: 20%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase-categories .categories .category img{
+    width: 64px;
+    padding: 15px 0px;
+}
+
+.showcase-categories .categories .category a {
+    color: white;
+}
+
+.showcase-projects {
+    display: flex;
+    justify-content: center;        
+    padding: 30px 0px;
+}
+
+.showcase-projects .row {    
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+}
+
+.showcase-projects .row .card {
+    width: 260px;
+    height: 400px;
+    background: white;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.showcase-projects .row .card .title, .showcase-projects .row .card .description, .showcase-projects .row .card .view {
+    width: 90%;
+}
+
+.showcase-projects .row .card .title h4 {
+    font-weight: 600;
+    color: darkslategray;
+    text-align: justify;
+}
+
+.showcase-projects .row .card .title p {
+    font-weight: 600;
+    font-size: 0.8em;
+    padding: 5px 0px;
+    
+}
+
+.showcase-projects .row .card .description p {
+    color: gray;
+    text-align: justify;
+}
+
+.showcase-projects .row .card .view {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: inherit;
+}
+
+.showcase-projects .row .card .view a {
+    height: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    background-color: #00AE50;
+    border: 1px solid lightgray;
+    transition: color, background-color 0.5s;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.showcase-projects .row .card .view a:hover {
+    background-color: #008b40;
+}
+
+.showcase-next {
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px 30px 0px;
+}
+
+.showcase-next .container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.showcase-next .container a {
+    padding: 10px 50px;
+    background-color: white;
+    border: 2px solid lightgray;
+    transition: background-color, color 0.8s;
+}
+
+.showcase-next .container a:hover {
+    background-color: #62669C;
+    color: white;
+}
+
+/* --- End ShowCase Projects --- */
+
+.students-banner {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    background: linear-gradient(270deg, #ef7078, #fdbe92);
+    background-size: 400% 400%;
+    -webkit-animation: Students 6s ease infinite;
+    -moz-animation: Students 6s ease infinite;
+    -o-animation: Students 6s ease infinite;
+    animation: Students 6s ease infinite;
+}
+    
+@-webkit-keyframes Students {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes Students {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes Students {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes Students { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.students-showcase {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+}
+
+.students-showcase .container {
+    display: flex;
+}
+
+.students-showcase .container .left {
+    width: 80%;
+    height: inherit;
+    height: 100%;
+    overflow-y: scroll; 
+}
+
+.students-showcase .container .left::-webkit-scrollbar {
+    width: 0.5em;    
+}
+ 
+.students-showcase .container .left::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);    
+}
+ 
+.students-showcase .container .left::-webkit-scrollbar-thumb {
+    background-color: #5246F2;
+    outline: 1px solid slategrey;
+    border-radius: 5px;
+}
+
+.students-showcase .container .left .card {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 10px 0px;
+    padding: 5px 0px;
+}
+
+.students-showcase .container .left .card .image {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.students-showcase .container .left .card .image img {
+    height: 100px;
+    border-radius: 50%;
+}
+
+.students-showcase .container .left .card .information {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.students-showcase .container .left .card .information .title h3 {
+    font-weight: 500;
+    padding: 5px 0px;
+}
+
+.students-showcase .container .left .card .information .title h4 {
+    font-weight: 400;
+    font-size: 0.9em;
+    padding: 5px 0px;
+}
+
+.students-showcase .container .left .card .location p {
+    padding: 5px 0px;
+    font-size: 0.8em;
+}
+
+.students-showcase .container .left .card .tags {
+    width: 80%;
+    border: none;
+    justify-content: space-between;
+}
+
+.students-showcase .container .right {
+    width: 20%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+.students-showcase .container .right .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.students-showcase .container .right .title h4 {
+    font-weight: 500;
+    padding: 15px 0px;
+}
+
+.students-showcase .container .right .students-filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.students-showcase .container .right .students-filter form {
+    width: 100%;
+}
+
+.students-showcase .container .right .students-filter form select {
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+
+.students-showcase .container .right .students-filter form p {
+    padding: 10px 0px;
+}
+
+.students-showcase .container .right .students-filter form select option {
+    font-weight: bold;
+}
+
+.students-showcase .container .right .students-filter form select:focus {
+    outline: none;
+}
+
+#filtrar {
+    margin: 10px 0px;
+}
+
+.students-showcase .container .right .students-filter form input[type="submit"] {
+    padding: 5px 10px;
+    width: 100%;
+    font-family: "Open Sans";
+    font-weight: 700;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    background-color: #5246F2;
+    transition: color, background-color 0.5s;
+}
+
+.students-showcase .container .right .students-filter form input[type="submit"]:hover {
+    background-color: #008b40;
 }

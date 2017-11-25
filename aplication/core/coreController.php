@@ -9,10 +9,9 @@
  */
 class coreController
 {
-    public $adapter;
+    public $adapter;    
 
-    public function __construct()
-    {
+    public function __construct(){
         require_once 'coreConection.php';
         require_once 'coreInits.php';
         require_once 'coreModel.php';
@@ -44,5 +43,9 @@ class coreController
     /*Crea la accion y la url*/
     public function redirect($controlador=DEFAULT_CONTROLLER,$accion=DEFAULT_ACTION){
         header("Location:index.php?aplication/controllers=".$controlador."&action=".$accion);
+    }
+
+    public function login(){
+
     }
 }
