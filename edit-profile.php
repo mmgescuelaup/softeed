@@ -229,6 +229,25 @@
                 <input type="file" name="file" id="file" class="input-file">
                 <label for="file" class="input-form">    Actualizar Constancia de estudios</label>
             </div>
+
+            <div class="registro-form">
+                <label for="alias" class="labelsito">Alias</label>
+                <input type="text" name="alias" id="" placeholder="Alias" class="input-form">
+                <label for="facebook" class="labelsito">Facebook</label>
+                <input type="text" name="facebook" id="" placeholder="Facebook" class="input-form">
+                <label for="instagram" class="labelsito">Instagram</label>
+                <input type="text" name="instagram" id="" placeholder="Instagram" class="input-form">
+                <label for="linkedin" class="labelsito">Linkedin</label>
+                <input type="text" name="linkedin" id="" placeholder="Likendin" class="input-form">
+                <label for="twitter" class="labelsito">Twitter</label>
+                <input type="text" name="twitter" id="" placeholder="Twitter" class="input-form">
+                <label for="web" class="labelsito">Página web</label>
+                <input type="text" name="web" id="" placeholder="Pagina web" class="input-form">
+                <label for="otro" class="labelsito">Otro</label>
+                <input type="text" name="otro" id="" placeholder="Otro" class="input-form">
+                <input type="submit" name="boton" id="btn-form" value="Guardar Cambios" class="input-form darkpurple">
+            </div>
+
             <div class="registro-form">
                 <label for="horario" class="labelsito">Horario de Disponibilidad</label>
                 <input type="text" name="horario" id="" placeholder="Horario de Disponibilidad" class="input-form">
@@ -252,24 +271,18 @@
                 <input type="text" name="skills" id="" placeholder="Skills" class="input-form">
 
             </div>
+        </form>
+
+        <form action="" method="post" enctype="multipart/form-data" id="form-datos">
             <div class="registro-form">
-                <label for="alias" class="labelsito">Alias</label>
-                <input type="text" name="alias" id="" placeholder="Alias" class="input-form">
-                <label for="facebook" class="labelsito">Facebook</label>
-                <input type="text" name="facebook" id="" placeholder="Facebook" class="input-form">
-                <label for="instagram" class="labelsito">Instagram</label>
-                <input type="text" name="instagram" id="" placeholder="Instagram" class="input-form">
-                <label for="linkedin" class="labelsito">Linkedin</label>
-                <input type="text" name="linkedin" id="" placeholder="Likendin" class="input-form">
-                <label for="twitter" class="labelsito">Twitter</label>
-                <input type="text" name="twitter" id="" placeholder="Twitter" class="input-form">
-                <label for="web" class="labelsito">Página web</label>
-                <input type="text" name="web" id="" placeholder="Pagina web" class="input-form">
-                <label for="otro" class="labelsito">Otro</label>
-                <input type="text" name="otro" id="" placeholder="Otro" class="input-form">
-                <input type="submit" name="boton" id="btn-form" value="Guardar Cambios" class="input-form darkpurple">
+                <label for="pass1" class="labelsito">Contraseña</label>
+                <input type="password" name="pass1" id="" placeholder="Contraseña" class="input-form">
+                <label for="pass2" class="labelsito">Repite tu contraseña</label>
+                <input type="password" name="pass2" id="" placeholder="Repite tu contraseña" class="input-form">
+                <input type="submit" name="boton" id="btn-form" value="Cambiar Contraseña" class="input-form darkpurple">
             </div>
         </form>
+
     </div>
     <script src="aplication/js/jquery-3.2.1.min.js"></script>
     <script src="aplication/js/main.js"></script>
