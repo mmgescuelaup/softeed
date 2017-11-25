@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2017 a las 23:06:34
+-- Tiempo de generación: 25-11-2017 a las 16:16:26
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -20,6 +20,47 @@ SET time_zone = "+00:00";
 -- Base de datos: `softeed`
 --
 
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `REGISTRARESTUDIANTE` (IN `NOMBRE` VARCHAR(50), IN `APELLIDOS` VARCHAR(50), IN `SEXO` TINYINT(1), IN `EDAD` INT(4), IN `ESCOLARIDAD` VARCHAR(50), IN `CENTRO_ESTUDIO` VARCHAR(100), IN `COMPROBANTE` VARCHAR(100), IN `CORREO` VARCHAR(50), IN `CONTRASEÑA` VARCHAR(20))  BEGIN
+DECLARE ID INT DEFAULT 0;
+INSERT INTO ESTUDIANTE(
+NOMBRE,APELLIDOS,SEXO,EDAD,ESCOLARIDAD,CENTRO_DE_ESTUDIOS,COMPROBANTE)
+VALUES(
+NOMBRE,APELLIDOS,SEXO,EDAD,ESCOLARIDAD,CENTRO_ESTUDIO,COMPROBANTE);
+
+SELECT E.id INTO ID FROM estudiante E WHERE 
+E.Nombre = NOMBRE AND E.Apellidos = APELLIDOS AND E.Sexo = SEXO AND E.Edad = EDAD AND E.Escolaridad = ESCOLARIDAD AND E.Centro_de_Estudios = CENTRO_ESTUDIO AND E.Comprobante = COMPROBANTE 
+ORDER BY E.id DESC LIMIT 1;
+
+INSERT INTO usuarios_entrar(
+CORREO,CONTRASEÑA,TIPO_USUARIO,ID_ESTUDIANTE)
+VALUES(
+CORREO,CONTRASEÑA,"E",ID);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `REGISTRARRECLUTADOR` (IN `NOMBRE` VARCHAR(30), IN `APELLIDOS` VARCHAR(30), IN `RFC` VARCHAR(15), IN `EDAD` INT(11), IN `NOMBRE_EMPRESA` VARCHAR(50), IN `DIRECCION_EMPRESA` VARCHAR(70), IN `TELEFONO` VARCHAR(12), IN `CORREO` VARCHAR(50), IN `CONTRASEÑA` VARCHAR(20))  BEGIN
+DECLARE ID INT DEFAULT 0;
+
+INSERT INTO reclutador(
+    NOMBRE_RECLUTADOR, APELLIDOS_RECLUTADOR, RFC, EDAD_RECLUTADOR, 			NOM_EMPRESARIAL, DIRECCION_EMPRESARIAL, TELEFONO)
+VALUES(
+	NOMBRE, APELLIDOS, RFC, EDAD, NOMBRE_EMPRESA, DIRECCION_EMPRESA, 		TELEFONO);
+    
+SELECT R.id INTO ID FROM reclutador R WHERE
+	NOMBRE_RECLUTADOR = NOMBRE AND APELLIDOS_RECLUTADOR = APELLIDOS AND RFC = RFC AND EDAD_RECLUTADOR = EDAD AND NOM_EMPRESARIAL = NOMBRE_EMPRESA AND DIRECCION_EMPRESARIAL = DIRECCION_EMPRESA AND TELEFONO = TELEFONO ORDER BY R.id DESC LIMIT 1;
+    
+INSERT INTO usuarios_entrar(
+	CORREO, CONTRASEÑA, TIPO_USUARIO, ID_RECLUTADOR)
+VALUES(
+	CORREO, CONTRASEÑA, "R", ID);
+
+END$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -34,22 +75,24 @@ CREATE TABLE `estudiante` (
   `Edad` int(4) NOT NULL,
   `Escolaridad` varchar(50) NOT NULL,
   `Centro_de_Estudios` varchar(100) NOT NULL,
-  `Imagen_Perfil` varchar(100) NOT NULL,
-  `Alias` varchar(100) NOT NULL,
-  `Telefono` varchar(15) NOT NULL,
-  `Horario_Disponibilidad` varchar(100) NOT NULL,
-  `Disponibilidad_Contratacion` tinyint(1) NOT NULL,
-  `Carrera` varchar(70) NOT NULL,
-  `Pais` int(30) NOT NULL,
-  `Ciudad` int(30) NOT NULL
+  `Comprobante` varchar(100) NOT NULL,
+  `Imagen_Perfil` varchar(100) DEFAULT NULL,
+  `Alias` varchar(100) DEFAULT NULL,
+  `Telefono` varchar(15) DEFAULT NULL,
+  `Horario_Disponibilidad` varchar(100) DEFAULT NULL,
+  `Disponibilidad_Contratacion` tinyint(1) DEFAULT NULL,
+  `Carrera` varchar(70) DEFAULT NULL,
+  `Pais` varchar(30) DEFAULT NULL,
+  `Ciudad` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `estudiante`
 --
 
-INSERT INTO `estudiante` (`id`, `Nombre`, `Apellidos`, `Sexo`, `Edad`, `Escolaridad`, `Centro_de_Estudios`, `Imagen_Perfil`, `Alias`, `Telefono`, `Horario_Disponibilidad`, `Disponibilidad_Contratacion`, `Carrera`, `Pais`, `Ciudad`) VALUES
-(1, 'PEDRO PABLO', 'ROMERO MARTINEZ', 0, 20, 'UNIVERSIDAD', 'UNIVERSIDAD POLITECNICA DE QUINTANA ROO', '', 'KABUTOYAMATO', '9982056404', '4PM - 7PM', 0, 'INGENIERIA EN SOFTWARE', 1, 1);
+INSERT INTO `estudiante` (`id`, `Nombre`, `Apellidos`, `Sexo`, `Edad`, `Escolaridad`, `Centro_de_Estudios`, `Comprobante`, `Imagen_Perfil`, `Alias`, `Telefono`, `Horario_Disponibilidad`, `Disponibilidad_Contratacion`, `Carrera`, `Pais`, `Ciudad`) VALUES
+(7, 'PEDRO PABLO', 'ROMERO MARTINEZ', 0, 20, 'UNIVERSIDAD', 'UNIVERSIDAD POLITECNICA DE QUINTANA ROO', 'C:/TETE.TETE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'PEDRO PABLO', 'ROMERO MARTINEZ', 0, 20, 'SUPERIOR', 'UNIVERSIDAD POLITECNICA DE QUINTANA ROO', 'C:/TETE.TETE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -62,13 +105,6 @@ CREATE TABLE `estudiante_proyecto` (
   `id_Estudiante` int(11) NOT NULL,
   `id_Proyecto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `estudiante_proyecto`
---
-
-INSERT INTO `estudiante_proyecto` (`id`, `id_Estudiante`, `id_Proyecto`) VALUES
-(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -120,13 +156,6 @@ CREATE TABLE `proyectos` (
   `Portada` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `proyectos`
---
-
-INSERT INTO `proyectos` (`id`, `Nombre`, `Descripcion`, `Status`, `Portada`) VALUES
-(1, 'PUNTO DE VENTA', 'UN PEQUEÑO PUNTO DE VENTA POTENTE CREADO EN C# QUE PUEDE FACTURAR', 'TERMINADO', 'NADA NO HAY NO EXISTE');
-
 -- --------------------------------------------------------
 
 --
@@ -138,15 +167,6 @@ CREATE TABLE `proyecto_tag` (
   `ID_PROYECTO` int(11) DEFAULT NULL,
   `ID_TAG` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `proyecto_tag`
---
-
-INSERT INTO `proyecto_tag` (`ID`, `ID_PROYECTO`, `ID_TAG`) VALUES
-(1, 1, 2),
-(2, 1, 3),
-(3, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -170,7 +190,7 @@ CREATE TABLE `reclutador` (
 --
 
 INSERT INTO `reclutador` (`id`, `RFC`, `Nom_Empresarial`, `Direccion_Empresarial`, `Nombre_Reclutador`, `Apellidos_Reclutador`, `Edad_Reclutador`, `Telefono`) VALUES
-(1, 'NOCL970111H34', 'SOCIAL NODES', 'ALGUNA', 'LUIS ANGEL', 'NOVELO CAAMAL', 20, '9983406367');
+(1, 'ROMP971111RPM', 'SOCIAL NODES', 'SM 51 M 39 L 19 CALLE CHAKAH FRACC BONAMPAK', 'PEDRO PABLO', 'ROMERO MARTINEZ', 20, '9982056404');
 
 -- --------------------------------------------------------
 
@@ -182,16 +202,6 @@ CREATE TABLE `tags` (
   `ID` int(11) NOT NULL,
   `NOMBRE` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `tags`
---
-
-INSERT INTO `tags` (`ID`, `NOMBRE`) VALUES
-(1, 'ANDROID'),
-(2, 'VISUAL C#'),
-(3, 'COMERCIO'),
-(4, 'DESKTOP');
 
 -- --------------------------------------------------------
 
@@ -213,8 +223,9 @@ CREATE TABLE `usuarios_entrar` (
 --
 
 INSERT INTO `usuarios_entrar` (`ID`, `CORREO`, `CONTRASEÑA`, `TIPO_USUARIO`, `ID_ESTUDIANTE`, `ID_RECLUTADOR`) VALUES
-(1, 'PEDRORM19@GMAIL.COM', '11NOV1997', 'E', 1, NULL),
-(2, 'LUISANC.LANC@GMAIL.COM', '1234', 'R', NULL, 1);
+(1, 'PEDRORM19@GMAIL.COM', '11NOV1997', 'E', 7, NULL),
+(2, 'PEDRORM19@GMAIL.COM', '11NOV1997', 'E', 8, NULL),
+(3, 'PEDRORM19@GMAIL.COM', '11NOV1997', 'R', NULL, 1);
 
 --
 -- Índices para tablas volcadas
@@ -238,6 +249,7 @@ ALTER TABLE `estudiante_proyecto`
 -- Indices de la tabla `estudiante_reclutador`
 --
 ALTER TABLE `estudiante_reclutador`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `id_Estudiante` (`id_Estudiante`),
   ADD KEY `id_Reclutador` (`id_Reclutador`);
 
@@ -252,8 +264,8 @@ ALTER TABLE `medias`
 --
 ALTER TABLE `media_proyecto`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_Proyecto` (`id_Proyecto`),
-  ADD KEY `id_media` (`id_media`);
+  ADD KEY `id_media` (`id_media`),
+  ADD KEY `id_Proyecto` (`id_Proyecto`);
 
 --
 -- Indices de la tabla `proyectos`
@@ -266,8 +278,8 @@ ALTER TABLE `proyectos`
 --
 ALTER TABLE `proyecto_tag`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `ID_PROYECTO` (`ID_PROYECTO`),
-  ADD KEY `ID_TAG` (`ID_TAG`);
+  ADD KEY `ID_TAG` (`ID_TAG`),
+  ADD KEY `ID_PROYECTO` (`ID_PROYECTO`);
 
 --
 -- Indices de la tabla `reclutador`
@@ -290,6 +302,60 @@ ALTER TABLE `usuarios_entrar`
   ADD KEY `ID_RECLUTADOR` (`ID_RECLUTADOR`);
 
 --
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `estudiante`
+--
+ALTER TABLE `estudiante`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT de la tabla `estudiante_proyecto`
+--
+ALTER TABLE `estudiante_proyecto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `estudiante_reclutador`
+--
+ALTER TABLE `estudiante_reclutador`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `medias`
+--
+ALTER TABLE `medias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `media_proyecto`
+--
+ALTER TABLE `media_proyecto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `proyectos`
+--
+ALTER TABLE `proyectos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `proyecto_tag`
+--
+ALTER TABLE `proyecto_tag`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `reclutador`
+--
+ALTER TABLE `reclutador`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `tags`
+--
+ALTER TABLE `tags`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `usuarios_entrar`
+--
+ALTER TABLE `usuarios_entrar`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -311,15 +377,15 @@ ALTER TABLE `estudiante_reclutador`
 -- Filtros para la tabla `media_proyecto`
 --
 ALTER TABLE `media_proyecto`
-  ADD CONSTRAINT `media_proyecto_ibfk_1` FOREIGN KEY (`id_Proyecto`) REFERENCES `proyectos` (`id`),
-  ADD CONSTRAINT `media_proyecto_ibfk_2` FOREIGN KEY (`id_media`) REFERENCES `medias` (`id`);
+  ADD CONSTRAINT `media_proyecto_ibfk_1` FOREIGN KEY (`id_media`) REFERENCES `medias` (`id`),
+  ADD CONSTRAINT `media_proyecto_ibfk_2` FOREIGN KEY (`id_Proyecto`) REFERENCES `proyectos` (`id`);
 
 --
 -- Filtros para la tabla `proyecto_tag`
 --
 ALTER TABLE `proyecto_tag`
-  ADD CONSTRAINT `proyecto_tag_ibfk_1` FOREIGN KEY (`ID_PROYECTO`) REFERENCES `proyectos` (`id`),
-  ADD CONSTRAINT `proyecto_tag_ibfk_2` FOREIGN KEY (`ID_TAG`) REFERENCES `tags` (`ID`);
+  ADD CONSTRAINT `proyecto_tag_ibfk_1` FOREIGN KEY (`ID_TAG`) REFERENCES `tags` (`ID`),
+  ADD CONSTRAINT `proyecto_tag_ibfk_2` FOREIGN KEY (`ID_PROYECTO`) REFERENCES `proyectos` (`id`);
 
 --
 -- Filtros para la tabla `usuarios_entrar`
