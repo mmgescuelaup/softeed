@@ -38,6 +38,7 @@ class coreController
         $helper=new coreUrl();
         require 'aplication/views/header/header.php';
         require_once 'aplication/views/'.$vista.'.php';
+        require 'aplication/views/footer/footer.php';
     }
 
     /*Crea la accion y la url*/
