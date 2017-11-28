@@ -44,6 +44,10 @@ a {
     background-color: #00AE50;
 }
 
+.purple {
+    background-color: #5246F2;
+}
+
 p {
     font-size: 0.9em;
 }
@@ -262,7 +266,7 @@ header .container .right .signup a:hover {
 
 /* --- Profiles --- */
 
-.banner-profile {
+.banner-profile,.my-profile .banner-profile {
     height: 300px;
     background-color: #1D2338;
     display: flex;
@@ -271,13 +275,13 @@ header .container .right .signup a:hover {
     font-family: 'Open Sans', sans-serif;
 }
 
-.banner-profile .container {
+.banner-profile .container , .my-profile .banner-profile .container {
     display: flex;
     flex-direction: row;
     justify-content: center;    
 }
 
-.banner-profile .container .profile-picture {
+.banner-profile .container .profile-picture, .my-profile .banner-profile .container .profile-picture  {
     width: 20%;
     height: inherit;    
     display: flex;
@@ -286,12 +290,12 @@ header .container .right .signup a:hover {
     align-items: center;        
 }
 
-.banner-profile .container .profile-picture img {
+.banner-profile .container .profile-picture img, .my-profile .banner-profile .container .profile-picture img {
     height: 60%;
     border-radius: 50%;
 }
 
-.banner-profile .container .information {
+.banner-profile .container .information, .my-profile .banner-profile .container .information {
     width: 80%;
     height: inherit;    
     color: #ffffff;
@@ -299,32 +303,32 @@ header .container .right .signup a:hover {
     flex-direction: column;
     justify-content: center;
 }
-.banner-profile .container .information .name h2{
+.banner-profile .container .information .name h2, .my-profile .banner-profile .container .information .name h2{
     font-weight: 600;
     padding: 5px 0px 5px 0px;
 }
 
-.banner-profile .container .information .school h3{
+.banner-profile .container .information .school h3, .my-profile .banner-profile .container .information .school h3{
     font-weight: 500;
     padding: 5px 0px 5px 0px;
 }
 
-.banner-profile .container .information .location{
+.banner-profile .container .information .location, .my-profile .banner-profile .container .information .location{
     display: flex;
     flex-direction: row;
     height: auto;
     padding: 5px 0px 5px 0px;
 }
 
-.banner-profile .container .information .location h4{
+.banner-profile .container .information .location h4, .my-profile .banner-profile .container .information .location h4{
     font-weight: 500 bold;
 }
 
-.banner-profile .container .information .location i{
+.banner-profile .container .information .location i, .my-profile .banner-profile .container .information .location i{
     margin-left: 10px;
 }
 
-.banner-profile .container .information .about p{
+.banner-profile .container .information .about p, .my-profile .banner-profile .container .information .about p{
     width: 90%;    
     text-align: justify;
     font-weight: 300;
@@ -332,13 +336,13 @@ header .container .right .signup a:hover {
 }
 
 
-.banner-profile .container .information .social i {
+.banner-profile .container .information .social i, .my-profile .banner-profile .container .information .social i {
     color: #719CFC;
     font-size: 1.2em;
     padding: 5px 5px 5px 5px;
 }
 
-.projects, .summary {
+.projects, .summary, .my-profile .projects, .my-profile .summary {
     height: auto;
     display: flex;
     flex-direction: row;
@@ -347,7 +351,7 @@ header .container .right .signup a:hover {
     font-family: 'Open Sans', sans-serif;        
 }
 
-.projects .container, .summary .container {
+.projects .container, .summary .container, .my-profile .projects .container, .my-profile .summary .container {
     background-color: #ffffff;
     height: auto;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -356,16 +360,16 @@ header .container .right .signup a:hover {
     align-items: center;    
 }
 
-.projects .container .title, .summary .container .title {
+.projects .container .title, .summary .container .title, .my-profile .projects .container .title, .my-profile .summary .container .title  {
     width: 100%;    
 }
 
-.projects .container .title h2, .summary .container .title h2 {    
+.projects .container .title h2, .summary .container .title h2, .my-profile .projects .container .title h2, .my-profile .summary .container .title h2 {    
     padding: 20px 2px 20px 20px;
     font-size: 1.5em;
 }
 
-.projects .container .grid {
+.projects .container .grid, .my-profile .projects .container .grid {
     width: 100%;
     height: auto;
     margin: 5px 0px 25px 0px;
@@ -374,11 +378,11 @@ header .container .right .signup a:hover {
     justify-content: space-around;
 }
 
-.projects .container .grid .card {
+.projects .container .grid .card, .my-profile .projects .container .grid .card {
     position: relative;
 }
 
-.projects .container .grid .card .card-cover {    
+.projects .container .grid .card .card-cover, .my-profile .projects .container .grid .card .card-cover {    
     position: absolute;
     top: 0;
     right: 0;
@@ -395,27 +399,51 @@ header .container .right .signup a:hover {
     align-items: center;
 }
 
-.projects .container .grid .card .card-cover a {
+.projects .container .grid .card .card-cover a, .my-profile .projects .container .grid .card .card-cover a {
     color: #ffffff;
     text-transform: uppercase;
 }
 
-.projects .container .grid .card:hover .card-cover {
+.projects .container .grid .card:hover .card-cover, .my-profile .projects .container .grid .card:hover .card-cover {
 	opacity: 1;
 }
 
-.projects .container .grid .card img {
+.projects .container .grid .card img, .my-profile .projects .container .grid .card img {
     width: 100%;  
     display: flex;        
 }
 
-.summary .container .content {
+.my-profile .projects .container .add-project, .my-profile .summary .container .add-project {
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px 25px 0px;
+}
+
+.my-profile .projects .container .add-project a, .my-profile .summary .container .add-project a{
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+    border-radius: 5px;    
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    border: 1px solid lightgray;
+    transition: color, background-color 0.5s;
+    padding: 10px 20px;
+} 
+
+.my-profile .projects .container .add-project a:hover, .my-profile .summary .container .add-project a:hover {
+    background-color: #62669C;
+}
+
+.summary .container .content, .my-profile .summary .container .content {
     display: flex;
     flex-direction: column;
     justify-content: center;    
 }
 
-.summary .container .content p {
+.summary .container .content p, .my-profile .summary .container .content p {
     width: 95%;
     padding: 0px 2px 10px 20px;
     font-size: 0.9em;
@@ -845,6 +873,8 @@ header .container .right .signup a:hover {
 
 /* --- End ShowCase Projects --- */
 
+/* --- Students --- */
+
 .students-banner {
     display: flex;
     height: auto;
@@ -1023,6 +1053,12 @@ header .container .right .signup a:hover {
     background-color: #008b40;
 }
 
+/* --- End Students --- */
+
+
+/* --- New Project --- */
+
+
 
 /* --- Footer --- */
 
@@ -1090,3 +1126,87 @@ footer .container .bottom p{
 }
 
 /* --- End Footer --- */
+
+
+
+/* --- Index --- */
+
+.index .banner  {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.index .banner .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.index .banner .container .title h2 {
+    width: 50%;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 2.5em;
+}
+
+
+.index .banner .container .subtitle h3{
+    width: 50%;
+    font-weight: 300;
+    text-align: justify;
+    padding: 20px 0px;
+    text-transform: uppercase;
+}
+
+.index .about-us {
+    height: auto;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.index .about-us .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.index .about-us .container .title h3 {
+    font-weight: 600;
+    font-size: 1.5em;
+    padding: 50px 0px 10px 0px;
+}
+
+.index .about-us .container .title h4 {
+    font-weight: 500;
+    text-align: center;
+}
+
+.index .about-us .container .images {
+    padding: 50px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.index .about-us .container .images img {
+    height: 30px;
+}
+
+.index .how-works {
+    display: flex;
+    justify-content: center;
+    background-color: #252525;
+}
+
+.index .how-works img {
+    height: 420px;
+}
+
+.index .categories {
+    background-color: #252525;
+}
+
+/* --- End Index --- */
