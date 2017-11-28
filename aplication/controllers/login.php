@@ -22,7 +22,7 @@ class login extends coreController
         /*if (!empty($this->dataUser)){
             $this->loadView('public/signin',array());
         }*/
-        $this->loadView('public/signin',array());
+        $this->loadView('public/signin',array(),$this->dataUser1);
     }
 
     public function entrar(){
@@ -31,10 +31,15 @@ class login extends coreController
         $result=$this->model->checkLogin($user,$pass);
         //var_dump($result);
         if (!empty($result)) {
-            $this->loadView("public/estudiante",array('userData' =>$result, ));
-            /*$id=$result[1];
-            $userData=$this->model->GetuserDataEstudiante($id);
-            var_dump($userData);*/
+            if ($result[0]='R'){
+                $this->loadView("public/showcase",array('userData' =>$result, ),$this->dataUser1);
+            }
+            else if($result[0]='E'){
+                $this->loadView("public/profile",array('userData' =>$result, ),$this->dataUser1);
+            }
+            else{
+                $this->loadView("public/signin",array('userData' =>$result, ),$this->dataUser1);
+            }
         }
     }
 }
