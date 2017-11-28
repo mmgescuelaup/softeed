@@ -8,6 +8,9 @@
  */
 class registre extends coreController
 {
+    public $adapter;
+    private $model;
+
     public function __construct()
     {
         parent::__construct();
@@ -28,6 +31,10 @@ class registre extends coreController
 
     public function createReclutador(){
         
+    }
+
+    public function createEstudiante(){
+
     }
 
     public function estudiante(){

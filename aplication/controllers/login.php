@@ -31,14 +31,18 @@ class login extends coreController
         $result=$this->model->checkLogin($user,$pass);
         //var_dump($result);
         if (!empty($result)) {
-            if ($result[0]='R'){
-                $this->loadView("public/showcase",array('userData' =>$result, ),$this->dataUser1);
+            //echo "id".$result[2];
+            if ($result[0]=='R'){
+                $this->dataUser1=$this->model->GetuserDataReclutador($result[2]);
+                $this->loadView("public/students",array('userData' =>$this->dataUser1),$this->dataUser1);
             }
-            else if($result[0]='E'){
-                $this->loadView("public/profile",array('userData' =>$result, ),$this->dataUser1);
+            else if($result[0]=='E'){
+                $this->dataUser1=$this->model->GetuserDataEstudiante($result[1]);
+                $skills=$this->model->getSkills($result[1]);
+                $this->loadView("private/my-profile",array('skils' =>$skills),$this->dataUser1);
             }
             else{
-                $this->loadView("public/signin",array('userData' =>$result, ),$this->dataUser1);
+                $this->loadView("public/signin",array('userData' =>$this->dataUser1),$this->dataUser1);
             }
         }
     }

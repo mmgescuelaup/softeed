@@ -13,12 +13,12 @@
 
     <!-- Styles -->
 
-    <link rel="stylesheet" href="aplication/css/style.css" media="screen">
+    <link rel="stylesheet" href="../../css/style.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="aplication/css/font-awesome.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/font-awesome.css">
+    <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon">
     <style>
         .edita-perfil {
             display: flex;
@@ -190,7 +190,7 @@
 
     <div class="edita-perfil">
        <div id="avatar-section">
-           <img src="aplication/images/sample-profile.jpg" id="avatar" alt="imagen de perfil">
+           <img src="../../images/sample-profile.jpg" id="avatar" alt="imagen de perfil">
            <form id="avatar-form" action="" method="post" enctype="multipart/form-data">
             <input type="file" name="file-a" id="file-a" class="input-file">
             <label for="file-a" class="input-form">
@@ -272,8 +272,8 @@
         </form>
 
     </div>
-    <script src="aplication/js/jquery-3.2.1.min.js"></script>
-    <script src="aplication/js/main.js"></script>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/main.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
 
