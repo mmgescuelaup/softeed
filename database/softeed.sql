@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2017 a las 16:16:26
+-- Tiempo de generación: 30-11-2017 a las 00:11:42
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -24,6 +24,23 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `BUSCARALUMNOS` (IN `NOMBRE` VARCHAR(70), IN `CENTRO` VARCHAR(100), IN `PAIS` VARCHAR(30), IN `CIUDAD` VARCHAR(30), IN `SKILL` VARCHAR(30))  NO SQL
+BEGIN
+
+SET GLOBAL FOREIGN_KEY_CHECKS=OFF;
+SELECT * FROM estudiante E INNER JOIN(
+    SELECT E.id FROM estudiante E WHERE 
+        (CONCAT(E.Nombre," ",E.Apellidos) LIKE CONCAT('%', NOMBRE , '%') AND E.Centro_de_Estudios LIKE CONCAT("%",CENTRO,"%")) AND 
+    (E.Pais LIKE CONCAT("%",PAIS,"%") AND E.Ciudad LIKE 				CONCAT("%",CIUDAD,"%"))			
+) IDS ON E.ID = IDS.ID INNER JOIN
+estudiante_proyecto EP ON E.ID = EP.id_Estudiante INNER JOIN
+proyecto_tag PT ON EP.id_Proyecto = PT.ID_PROYECTO INNER JOIN
+tags T ON T.ID = PT.ID_TAG
+WHERE T.NOMBRE LIKE CONCAT("%",SKILL,"%");
+
+
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `REGISTRARESTUDIANTE` (IN `NOMBRE` VARCHAR(50), IN `APELLIDOS` VARCHAR(50), IN `SEXO` TINYINT(1), IN `EDAD` INT(4), IN `ESCOLARIDAD` VARCHAR(50), IN `CENTRO_ESTUDIO` VARCHAR(100), IN `COMPROBANTE` VARCHAR(100), IN `CORREO` VARCHAR(50), IN `CONTRASEÑA` VARCHAR(20))  BEGIN
 DECLARE ID INT DEFAULT 0;
 INSERT INTO ESTUDIANTE(
@@ -92,7 +109,10 @@ CREATE TABLE `estudiante` (
 
 INSERT INTO `estudiante` (`id`, `Nombre`, `Apellidos`, `Sexo`, `Edad`, `Escolaridad`, `Centro_de_Estudios`, `Comprobante`, `Imagen_Perfil`, `Alias`, `Telefono`, `Horario_Disponibilidad`, `Disponibilidad_Contratacion`, `Carrera`, `Pais`, `Ciudad`) VALUES
 (7, 'PEDRO PABLO', 'ROMERO MARTINEZ', 0, 20, 'UNIVERSIDAD', 'UNIVERSIDAD POLITECNICA DE QUINTANA ROO', 'C:/TETE.TETE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 'PEDRO PABLO', 'ROMERO MARTINEZ', 0, 20, 'SUPERIOR', 'UNIVERSIDAD POLITECNICA DE QUINTANA ROO', 'C:/TETE.TETE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(8, 'PEDRO PABLO', 'ROMERO MARTINEZ', 0, 20, 'SUPERIOR', 'UNIVERSIDAD AUTONOMA DE YUCATAN', 'C:/TETE.TETE', NULL, NULL, NULL, NULL, 0, NULL, 'MEXICO', 'MERIDA'),
+(9, 'SERGIO ALEJANDRO ', 'TREJO BRITO', 0, 20, 'SUPERIOR', 'UNIVERSIDAD DEL CARIBE', 'C:/TETE.TETE', 'NADA', 'TREJOCODE', '9999999991', '1-2', 1, 'TELEMATICA', 'COLOMBIA', 'CALI'),
+(10, 'MATEO', 'MORALES GARCIA', 0, 21, 'SUPERIOR', 'UNIVERSIDAD AUTONOMA DE MEXICO', 'NADA', 'NADA', 'CHATIU', '9999999991', NULL, 0, 'SOFTWARE', 'MEXICO', 'CANCUN'),
+(11, 'BRAYAN ISAI', 'FUENTES MEDINA', 0, 20, 'SUPERIOR', 'BENITO JUAREZ COLLEGE', 'NADA', 'NADA', NULL, NULL, NULL, NULL, NULL, 'ESTADOS UNIDOS', 'NUEVA YORK');
 
 -- --------------------------------------------------------
 
@@ -105,6 +125,13 @@ CREATE TABLE `estudiante_proyecto` (
   `id_Estudiante` int(11) NOT NULL,
   `id_Proyecto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `estudiante_proyecto`
+--
+
+INSERT INTO `estudiante_proyecto` (`id`, `id_Estudiante`, `id_Proyecto`) VALUES
+(1, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -156,6 +183,13 @@ CREATE TABLE `proyectos` (
   `Portada` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `proyectos`
+--
+
+INSERT INTO `proyectos` (`id`, `Nombre`, `Descripcion`, `Status`, `Portada`) VALUES
+(1, 'PUNTO DE VENTA', 'UNA APLICACION DE PUNTO DE VENTA QUE ES MUY POTENTE Y PUEDE FACTURAR', 'TERMINADO', 'C:/TETE/TETE.JPG');
+
 -- --------------------------------------------------------
 
 --
@@ -167,6 +201,14 @@ CREATE TABLE `proyecto_tag` (
   `ID_PROYECTO` int(11) DEFAULT NULL,
   `ID_TAG` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `proyecto_tag`
+--
+
+INSERT INTO `proyecto_tag` (`ID`, `ID_PROYECTO`, `ID_TAG`) VALUES
+(1, 1, 1),
+(2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -202,6 +244,15 @@ CREATE TABLE `tags` (
   `ID` int(11) NOT NULL,
   `NOMBRE` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tags`
+--
+
+INSERT INTO `tags` (`ID`, `NOMBRE`) VALUES
+(1, 'C#'),
+(2, 'DESKTOP'),
+(5, 'PUNTO DE VENTA');
 
 -- --------------------------------------------------------
 
@@ -309,12 +360,12 @@ ALTER TABLE `usuarios_entrar`
 -- AUTO_INCREMENT de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `estudiante_proyecto`
 --
 ALTER TABLE `estudiante_proyecto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `estudiante_reclutador`
 --
@@ -334,12 +385,12 @@ ALTER TABLE `media_proyecto`
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `proyecto_tag`
 --
 ALTER TABLE `proyecto_tag`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `reclutador`
 --
@@ -349,7 +400,7 @@ ALTER TABLE `reclutador`
 -- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `usuarios_entrar`
 --
