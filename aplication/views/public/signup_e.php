@@ -141,7 +141,7 @@
     </div>
     <div class="container" id="registro-form">
     <h1>Registrate gratis</h1>
-    <form action="" method="post" enctype ="multipart/form-data">
+    <form action="<?php echo $helper->url('registre','createEstudiante')?>" method="post" enctype ="multipart/form-data">
         <input type="text" name="nombre" id="" placeholder="Ingresa tu Nombre" class="input-form">
         <input type="text" name="apellido" id="" placeholder="Ingresa tu Apellido" class="input-form">
         <input type="email" name="correo" id="" placeholder="Ingresa tu Correo Electronico" class="input-form">
@@ -159,6 +159,8 @@
         <input type="file" name="file" id="file">
         <label for="file" class="input-form">    Ingresa tu Constancia de estudios</label>
         <input type="submit" name="boton" id="btn-form" value="Registrarse" class="input-form darkpurple">
+        <input type="password" name="pass1" id="" placeholder="Escribe tu contraseña" class="input-form">
+        <input type="password" name="pass2" id="" placeholder="Repite tu contraseña" class="input-form">
         <p class="iaccept">Al registrarte estás aceptando nuestros <a href="#">Términos y Condiciones</a></p>
     </form>
     </div>

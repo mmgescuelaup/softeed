@@ -15,7 +15,7 @@ class registre extends coreController
     {
         parent::__construct();
 
-        $this->model=new estudiantesModel($this->adapter);
+        $this->model=new regitreModel($this->adapter);
     }
 
     public function index(){
@@ -30,11 +30,20 @@ class registre extends coreController
     }
 
     public function createReclutador(){
-        
+
     }
 
     public function createEstudiante(){
-
+        $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $correo=$_POST['correo'];
+        $edad=$_POST['edad'];
+        $escolaridad=$_POST['escolaridad'];
+        $estudio=$_POST['centro-estudios'];
+        $comprobante='null';
+        $pass=$_POST['pass1'];
+        $sex=$_POST['sexo'];
+        $this->model->addEstudiante($nombre,$apellido,$sex,$edad,$escolaridad,$estudio,$comprobante,$correo,$pass);
     }
 
     public function estudiante(){
