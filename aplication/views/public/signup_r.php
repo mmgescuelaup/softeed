@@ -150,6 +150,8 @@
         <input type="text" name="direccion" id="" placeholder="Ingresa la Direccion de la Empresa" class="input-form">
         <input type="text" name="tel" id="" placeholder="Ingresa tu Telefono" class="input-form">
         <input type="email" name="correo" id="" placeholder="Ingresa tu Correo Electronico" class="input-form">
+        <input type="password" name="pass1" id="" placeholder="Escribe tu contraseña" class="input-form">
+        <input type="password" name="pass2" id="" placeholder="Repite tu contraseña" class="input-form">
         <input type="submit" name="boton" id="btn-form" value="Registrarse" class="input-form darkpurple">
         <p class="iaccept">Al registrarte estás aceptando nuestros <a href="#">Términos y Condiciones</a></p>
     </form>

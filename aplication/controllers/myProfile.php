@@ -3,10 +3,10 @@
 /**
  * Created by PhpStorm.
  * User: Administrador
- * Date: 21/11/2017
- * Time: 09:28 AM
+ * Date: 28/11/2017
+ * Time: 09:48 AM
  */
-class estudiantes extends coreController
+class myProfile
 {
     public $adapter;
     private $model;
@@ -15,14 +15,12 @@ class estudiantes extends coreController
     {
         parent::__construct();
 
-        $this->model=new estudiantesModel($this->adapter);
+        $this->model = new loginModel($this->adapter);
     }
     public function index(){
         /*if (!empty($this->dataUser)){
-            $this->loadView('public/students',array());
+            $this->loadView('public/signin',array());
         }*/
-
-        $this->loadView('public/students',array(),$this->dataUser1);
+        $this->loadView('private/my-profile',array(),$this->dataUser1);
     }
-
 }
