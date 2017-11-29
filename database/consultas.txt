@@ -30,3 +30,10 @@ SELECT TIPO_USUARIO,ID_ESTUDIANTE,ID_RECLUTADOR FROM usuarios_entrar WHERE CORRE
 	NOM_EMPRESARIAL, DIRECCION_EMPRESARIAL, TELEFONO, CORREO, CONTRASEÑA)
 
 
+////Buscador
+	////Alumnos
+	CALL BUSCARALUMNOS(NOMBRE Y/O APELLIDOS,CENTRO DE ESTUDIOS,PAIS,CIUDAD,SKILL)
+		si no vas a usar alguno de los datos como pais, ciudad o skill le metes una cadena vacia
+		ejemplo : para buscar todos los alumnos CALL BUSCARALUMNOS("","","","","");
+
+
