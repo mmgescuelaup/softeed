@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
         #sigin-form{
-            padding: 50px 50px 50px 50px;
+            padding: 50px 0px;
             background-color: #F0F4F8;
             width: 100%;
             display: flex;
@@ -125,7 +125,7 @@
         <a href="#" class="iaccept">Olvidaste tu contraseña?</a>
 
         <input type="submit" name="boton" id="btn-form" value="Iniciar Sesión" class="input-form darkpurple">
-        <p class="iaccept">No tienes una cuenta? Registrate!</p>
+        <p class="iaccept">No tienes una cuenta? <a href="<?php echo $helper->url('registre','index'); ?>"> Registrate!</a></p>
     </form>
     </div>
 

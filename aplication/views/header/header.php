@@ -2,7 +2,7 @@
     <div class="container">
         <div class="left">
             <div class="logo">
-                <a href="#"><img src="aplication/images/Softeed.jpg" alt="Softeed Logo" title="Softeed Logo"></a>
+                <a href="<?php echo $helper->url('inicio','index'); ?>"><img src="aplication/images/Softeed.jpg" alt="Softeed Logo" title="Softeed Logo"></a>
             </div>
             <nav>
                 <div class="navigation full">
