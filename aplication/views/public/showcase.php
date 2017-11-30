@@ -57,7 +57,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, facilis ducimus..</p>
                 </div>
                 <div class="view">
-                    <a href="#">Ver más</a>
+                    <a href="<?php echo $helper->url('project','index'); ?>">Ver más</a>
                 </div>
             </div>
             <div class="card">
@@ -72,7 +72,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, facilis ducimus..</p>
                 </div>
                 <div class="view">
-                    <a href="#">Ver más</a>
+                    <a href="<?php echo $helper->url('project','index'); ?>">Ver más</a>
                 </div>
             </div>
             <div class="card">
@@ -87,7 +87,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, facilis ducimus..</p>
                 </div>
                 <div class="view">
-                    <a href="#">Ver más</a>
+                    <a href="<?php echo $helper->url('project','index'); ?>">Ver más</a>
                 </div>
             </div>
             <div class="card">
@@ -102,7 +102,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, facilis ducimus..</p>
                 </div>
                 <div class="view">
-                    <a href="#">Ver más</a>
+                    <a href="<?php echo $helper->url('project','index'); ?>">Ver más</a>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, facilis ducimus..</p>
                 </div>
                 <div class="view">
-                    <a href="#">Ver más</a>
+                    <a href="<?php echo $helper->url('project','index'); ?>">Ver más</a>
                 </div>
             </div>
             <div class="card">
@@ -135,7 +135,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, facilis ducimus..</p>
                 </div>
                 <div class="view">
-                    <a href="#">Ver más</a>
+                    <a href="<?php echo $helper->url('project','index'); ?>">Ver más</a>
                 </div>
             </div>
             <div class="card">
@@ -150,7 +150,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, facilis ducimus..</p>
                 </div>
                 <div class="view">
-                    <a href="#">Ver más</a>
+                    <a href="<?php echo $helper->url('project','index'); ?>">Ver más</a>
                 </div>
             </div>
             <div class="card">
@@ -165,7 +165,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, facilis ducimus..</p>
                 </div>
                 <div class="view">
-                    <a href="#">Ver más</a>
+                    <a href="<?php echo $helper->url('project','index'); ?>">Ver más</a>
                 </div>
             </div>
         </div>
