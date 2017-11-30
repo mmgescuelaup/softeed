@@ -22,7 +22,13 @@ class estudiantes extends coreController
             $this->loadView('public/students',array());
         }*/
 
-        $this->loadView('public/students',array(),$this->dataUser1);
+        $data=$this->model->getAll();
+
+        $this->loadView('public/students',array('data'=>$data),$this->dataUser1);
+    }
+
+    public function search(){
+
     }
 
 }
