@@ -505,7 +505,8 @@ header .container .right .signup a:hover {
 }
 
 .viewer-project .container .left .description p {
-    width: 95%;    
+    width: 95%;
+    padding: 0px 0px 25px 0px;
 }
 
 .viewer-project .container .right {
