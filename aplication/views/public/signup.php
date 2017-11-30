@@ -21,7 +21,9 @@
     <style>
         #choose{
             background-color: #F0F4F8;
-            background: #252525 url(aplication/images/nodeatles.png) no-repeat fixed center;
+            background: #252525 url(https://static.pexels.com/photos/533189/pexels-photo-533189.jpeg) no-repeat fixed center;
+            background-repeat: no-repeat, repeat;
+            background-size: 100% auto;
             width: 100%;
             display: flex;
             flex-direction: column;
