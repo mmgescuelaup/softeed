@@ -15,7 +15,7 @@ class pretmex extends coreController
     {
         parent::__construct();
 
-        $this->model = new projectModel($this->adapter);
+        $this->model = new pretmexModel($this->adapter);
     }
     public function index(){
         $this->loadView('public/pretmex',array(),$this->dataUser1);
