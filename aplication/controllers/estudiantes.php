@@ -24,6 +24,8 @@ class estudiantes extends coreController
 
         $data=$this->model->getAll();
 
+        $skills=
+
         $this->loadView('public/students',array('data'=>$data),$this->dataUser1);
     }
 

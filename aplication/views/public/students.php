@@ -29,6 +29,7 @@
                            <p><?php echo(!empty($row->Ciudad))? $row->Ciudad : "No Disponible".','.(!empty($row->Pais))? $row->Pais : "No Disponible"; ?></p>
                        </div>
                        <div class="tags">
+                           <?php ?>
                            <div class="tag">
                                <a href="#">Android</a>
                            </div>
@@ -44,6 +45,7 @@
                            <div class="tag">
                                <a href="#">Technology</a>
                            </div>
+                           <?php ?>
                        </div>
                    </div>
                </div>
