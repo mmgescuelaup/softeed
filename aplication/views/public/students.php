@@ -15,167 +15,39 @@
 <div class="students-showcase full">
     <div class="container">
         <div class="left">
-           
-            <div class="card">
-                <div class="image">
-                    <img src="aplication/images/sample-profile.jpg" alt="">
-                </div>
-                <div class="information">
-                    <div class="title">
-                        <h3>Sergio Alejandro Trejo</h3>
-                        <h4>Universidad Politécnica de Quintana Roo</h4>
-                    </div>
-                    <div class="location">
-                        <p>Cancún, México</p>
-                    </div>
-                    <div class="tags">                
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Programming</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Software</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Technology</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="image">
-                    <img src="aplication/images/sample-profile.jpg" alt="">
-                </div>
-                <div class="information">
-                    <div class="title">
-                        <h3>Sergio Alejandro Trejo</h3>
-                        <h4>Universidad Politécnica de Quintana Roo</h4>
-                    </div>
-                    <div class="location">
-                        <p>Cancún, México</p>
-                    </div>
-                    <div class="tags">                
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Programming</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Software</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Technology</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="image">
-                    <img src="aplication/images/sample-profile.jpg" alt="">
-                </div>
-                <div class="information">
-                    <div class="title">
-                        <h3>Sergio Alejandro Trejo</h3>
-                        <h4>Universidad Politécnica de Quintana Roo</h4>
-                    </div>
-                    <div class="location">
-                        <p>Cancún, México</p>
-                    </div>
-                    <div class="tags">                
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Programming</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Software</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Technology</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="image">
-                    <img src="aplication/images/sample-profile.jpg" alt="">
-                </div>
-                <div class="information">
-                    <div class="title">
-                        <h3>Sergio Alejandro Trejo</h3>
-                        <h4>Universidad Politécnica de Quintana Roo</h4>
-                    </div>
-                    <div class="location">
-                        <p>Cancún, México</p>
-                    </div>
-                    <div class="tags">                
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Programming</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Software</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Technology</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="image">
-                    <img src="aplication/images/sample-profile.jpg" alt="">
-                </div>
-                <div class="information">
-                    <div class="title">
-                        <h3>Sergio Alejandro Trejo</h3>
-                        <h4>Universidad Politécnica de Quintana Roo</h4>
-                    </div>
-                    <div class="location">
-                        <p>Cancún, México</p>
-                    </div>
-                    <div class="tags">                
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Programming</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Software</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Android</a>
-                        </div>
-                        <div class="tag">
-                            <a href="#">Technology</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+           <?php foreach ($data as $row) {?>
+               <div class="card">
+                   <div class="image">
+                       <img src="<?PHP echo $row -> Imagen_Perfil;?>" alt="">
+                   </div>
+                   <div class="information">
+                       <div class="title">
+                           <h3><?php echo $row->Nombre; ?></h3>
+                           <h4><?php echo $row->Centro_de_Estudios;?></h4>
+                       </div>
+                       <div class="location">
+                           <p><?php echo(!empty($row->Ciudad))? $row->Ciudad : "No Disponible".','.(!empty($row->Pais))? $row->Pais : "No Disponible"; ?></p>
+                       </div>
+                       <div class="tags">
+                           <div class="tag">
+                               <a href="#">Android</a>
+                           </div>
+                           <div class="tag">
+                               <a href="#">Programming</a>
+                           </div>
+                           <div class="tag">
+                               <a href="#">Software</a>
+                           </div>
+                           <div class="tag">
+                               <a href="#">Android</a>
+                           </div>
+                           <div class="tag">
+                               <a href="#">Technology</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+            <?php } ?>
             <div class="showcase-next full">
                 <div class="container">
                     <a href="#" class="darkpurple">Siguiente ></a>
