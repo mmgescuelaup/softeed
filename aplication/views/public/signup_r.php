@@ -136,7 +136,7 @@
 <body>
     <div class="c2">
     <div class="container" id="lateral-pic">
-        <div id="img"><p>Aqui va una imagen </p></div>
+        <img id="img" src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg">
         <p class="iaccept">Ya estas registrado? <a href="#">Inicia Sesión</a></p>
     </div>
     <div class="container" id="registro-form">
