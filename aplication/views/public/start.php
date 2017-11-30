@@ -93,7 +93,7 @@
                         </div>
                         <div class="title">
                             <h4>PretMex - Aliado Financiero</h4>
-                            <p>@Rugama</p>
+                            <p>@PechPech</p>
                         </div>
                         <div class="description">
                             <p>PretMex es tu mejor aliado financiero, te ayudará a realizar un prestamo que vaya de acuerdo a tus necesidades...</p>
@@ -114,7 +114,7 @@
                             <p>Aceleradora que impulsa proyectos de alto impacto con un programa abierto a toda la comunidad...</p>
                         </div>
                         <div class="view">
-                            <a href="#">Ver más</a>
+                            <a href="#">Próximamente</a>
                         </div>
                     </div>
                     <div class="card">
@@ -129,7 +129,7 @@
                             <p>Marketplace de servicios automotrices. conectamos dueños de autos que requieren servicios con los mejores...</p>
                         </div>
                         <div class="view">
-                            <a href="#">Ver más</a>
+                            <a href="<?php echo $helper->url('goparken','index'); ?>">Ver más</a>
                         </div>
                     </div>
                     <div class="card">
