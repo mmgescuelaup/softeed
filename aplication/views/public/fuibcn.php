@@ -5,9 +5,10 @@
                 <h2>FIU BCN 2016</h2>
             </div>
             <div class="showcase">
-                <img src="aplication/images/fuibcn1.jpg" alt="">
-                <img src="aplication/images/fuibcn2.jpg" alt="">
-                <img src="aplication/images/fuibcn3.jpg" alt="">
+                <img src="aplication/images/fuibcn1.png" alt="">
+                <img src="aplication/images/fuibcn2.png" alt="">
+                <img src="aplication/images/fuibcn3.png" alt="">
+                <img src="aplication/images/fuibcn4.png" alt="">
 
             </div>
             <div class="description">
