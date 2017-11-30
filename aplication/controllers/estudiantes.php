@@ -18,13 +18,8 @@ class estudiantes extends coreController
         $this->model=new estudiantesModel($this->adapter);
     }
     public function index(){
-        /*if (!empty($this->dataUser)){
-            $this->loadView('public/students',array());
-        }*/
 
         $data=$this->model->getAll();
-
-        $skills=
 
         $this->loadView('public/students',array('data'=>$data),$this->dataUser1);
     }
