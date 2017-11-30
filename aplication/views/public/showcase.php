@@ -361,6 +361,25 @@
             </div>
         </div>
 
+        <div class="row full">
+            <div class="card">
+                <div class="image">
+                    <img src="aplication/images/wimbC.png" alt="">
+                </div>
+                <div class="title">
+                    <h4>WIMB</h4>
+                    <p>@SEISSAMSARAS</p>
+                </div>
+                <div class="description">
+                    <p>Where is my Bus es un sistema que ayuda a los usuarios, choferes y compañias de transportes públicos de Cancún...</p>
+                </div>
+                <div class="view">
+                    <a href="#">Proximamente</a>
+                </div>
+            </div>
+        </div>
+
+
 
     </div>
 </div>
