@@ -18,7 +18,7 @@
            <?php foreach ($data as $row) {?>
                <div class="card">
                    <div class="image">
-                       <img src="aplication/images/sample-profile.jpg" alt="">
+                       <img src="<?PHP echo $row -> Imagen_Perfil;?>" alt="">
                    </div>
                    <div class="information">
                        <div class="title">
