@@ -298,6 +298,69 @@
             </div>
         </div>
 
+        <div class="row full">
+            <div class="card">
+                <div class="image">
+                    <img src="aplication/images/fuibcnC.png" alt="">
+                </div>
+                <div class="title">
+                    <h4>FIU BCN 2016</h4>
+                    <p>@XeviAbril</p>
+                </div>
+                <div class="description">
+                    <p>El objetivo era crear un universo visual donde la melancolía de un pasado glorioso y la esperanza de un futuro más brillante se combinen entre sí...</p>
+                </div>
+                <div class="view">
+                    <a href="<?php echo $helper->url('fuibcn','index'); ?>">Ver más</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="aplication/images/mezcalC.png" alt="">
+                </div>
+                <div class="title">
+                    <h4>Mezcal</h4>
+                    <p>@RicMartiRoa</p>
+                </div>
+                <div class="description">
+                    <p>Fotografias e ilustrado para colectivo Mezcal</p>
+                </div>
+                <div class="view">
+                    <a href="<?php echo $helper->url('mezcal','index'); ?>">Ver más</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="aplication/images/fuibcnC.png" alt="">
+                </div>
+                <div class="title">
+                    <h4>FIU BCN 2016</h4>
+                    <p>@XeviAbril</p>
+                </div>
+                <div class="description">
+                    <p>El objetivo era crear un universo visual donde la melancolía de un pasado glorioso y la esperanza de un futuro más brillante se combinen entre sí...</p>
+                </div>
+                <div class="view">
+                    <a href="<?php echo $helper->url('fuibcn','index'); ?>">Ver más</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="aplication/images/mezcalC.png" alt="">
+                </div>
+                <div class="title">
+                    <h4>Mezcal</h4>
+                    <p>@RicMartiRoa</p>
+                </div>
+                <div class="description">
+                    <p>Fotografias e ilustrado para colectivo Mezcal</p>
+                </div>
+                <div class="view">
+                    <a href="<?php echo $helper->url('mezcal','index'); ?>">Ver más</a>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 </div>
