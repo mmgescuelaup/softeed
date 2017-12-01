@@ -14,12 +14,4 @@ class estudiantesModel extends coreModel
         $this->table="estudiante";
         parent::__construct($this->table, $adapter);
     }
-
-    public function searchBy(){
-
-    }
-
-    public function getAllEstudiantes(){
-
-    }
 }
